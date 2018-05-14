@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+}
+.box {
+    width: 45%;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px black;
+    padding: 20px;
+    height: 80%;
+    overflow: auto;
+}
+h2 {
+    text-decoration: underline;
+}
+.radio {
+    margin-left: 20px;
+}
+.right{
+    display: flex;
+    justify-content: flex-end;
+}
+.big {
+    font-size: 22px;
+    font-weight: bold;
+}
+.reg {
+    font-size: 18px;
+}
+.green {
+    color: green;
+}
+.red {
+    color: red;
+}
+.blue {
+    color: blue;
+}
+p {
+    display: inline-block;
+}

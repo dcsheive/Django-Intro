@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Success</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'survey/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'survey/css/style.css' %}">
+</head>
+<body>
+    <div id="box">
+        <h2>Submitted Data</h2>
+        <p>We charged your card for ${{request.session.sub}}</p>
+        <p>You have ordered {{request.session.count}} items so far</p>
+        <p>and spent ${{request.session.total}} with Amadon.com!</p>
+        <form action="/survey/back">
+            <button type="submit" class="btn btn-default">Go Back</button>
+        </form>
+    </div>
+</body>
+</html>

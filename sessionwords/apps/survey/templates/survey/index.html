@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Random Word</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'survey/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'survey/css/style.css' %}">
+</head>
+<body>
+    <div class="box">
+        <form action="survey/process/" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+            <label for="email">Add a new word</label>
+            <input type="text" class="form-control" name="thename">
+            </div>
+            <div class="form-group">
+            <label for="sel1">Choose color</label>
+            <div class="radio">
+                <label><input type="radio" name="sel1" value="red"> Red</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="sel1" value="blue"> Blue</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="sel1" value="green"> Green</label>
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox" value="checked" name="comment"> Show in BIG font</label>
+            </div>
+            <button type="submit" class="btn btn-default">Add Word</button>
+        </form>
+    </div>
+    </div>
+    <div class="box">
+        <form action="survey/clear" class="right">
+            <button type="submit" class="btn btn-default">Clear Session</button>
+        </form>
+        {% for i in request.session.words%}
+        <div class="entry">
+            {% if i.size == "checked" %}
+            <p class="{{i.color}} big">{{i.word}}</p>
+            {% else%}
+            <p class="{{i.color}} reg">{{i.word}}</p>
+            {%endif%}
+            <p> - added on {{i.time}}</p>
+        </div>
+        {%endfor%}
+    </div>
+</body>
+</html>

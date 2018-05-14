@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Random Word</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'random_word/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'random_word/css/style.css' %}">
+</head>
+<body>
+    <div>
+        <p>Random Word (attempt #{{request.session.count}})</p>
+    </div>
+    <div>
+        <h1>{{request.session.word}}</h1>
+    </div>
+    <form action="/random_word/generate">
+        <button type="submit">Generate</button>
+    </form>
+</body>
+</html>

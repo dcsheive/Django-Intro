@@ -1,0 +1,15 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+
+div {
+    border: 1px solid black;
+    width: 30vw;
+    text-align: center;
+}
+form {
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+}

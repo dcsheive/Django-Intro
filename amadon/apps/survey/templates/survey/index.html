@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Amadon</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'survey/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'survey/css/style.css' %}">
+</head>
+<body>
+    <h1>Amadon Store!</h1>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </tr>
+        </thead>
+        <tbody>
+        <form action="/survey/process/" method="post" id="form1">
+        {% csrf_token %}
+        {% for i in inventory %}
+            <tr>
+                <td>{{i.name}}</td>
+                <td>{{i.price}}</td>
+                <td>
+                    <div class="form-group">
+                        <select class="form-control" name="{{i.id}}">
+                        {% for j in checkrange%}
+                            <option value="{{j}}">{{j}}</option>
+                        {%endfor%}
+                        </select>
+                    </div>
+                </td>
+            </tr>
+        {%endfor%}
+        </form>
+        </tbody>
+    </table>
+    <div id="bottom">
+        <button type="submit" form="form1" value="Submit" class="btn btn-default">Buy!</button>
+    </div>
+</body>
+</html>

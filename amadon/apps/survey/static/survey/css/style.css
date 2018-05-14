@@ -1,0 +1,23 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+
+}
+.table-bordered {
+    width: 45%;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px black;
+    padding: 20px;
+}
+h1 {
+    text-align: center;
+}
+#bottom {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+}

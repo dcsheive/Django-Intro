@@ -45,7 +45,7 @@
             {% else%}
             <p class="{{i.color}} reg">{{i.word}}</p>
             {%endif%}
-            <p> - added on {{i.time}}</p>
+            <p> - added on {% now "jS F Y H:i" %}</p>
         </div>
         {%endfor%}
     </div>

@@ -7,7 +7,6 @@ def index(request):
     return render(request,'survey/index.html')
 
 def process(request):
-    time = strftime("%B %d, %Y %H:%M %p", gmtime())
     if request.method == "POST":
         word = request.POST['thename']
         color = request.POST['sel1']
@@ -16,7 +15,7 @@ def process(request):
         else: 
             size = request.POST['comment']
         temp_list = request.session['words']
-        temp_list.insert(0,{"word": word, "color": color, "size": size, 'time': time})
+        temp_list.insert(0,{"word": word, "color": color, "size": size})
         request.session['words'] = temp_list
         print(request.session['words'])
         return redirect('/')
